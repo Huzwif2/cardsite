@@ -1,18 +1,8 @@
-userlist = [
-	"James",
-	"James",
-	"Jame",
-	"Jamez",
-	"Bladee",
-	"Ecco",
-	"Thaiboy",
-	"Saber",
-	"Drain",
-	"Steve",
-	"Flint",
-	"Steel"
-];
+const userCardTemplate = document.querySelector("[data-user-template]")
 
-userlist.sort();
-
-console.log(userlist);
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(data =>{ 
+	      const card = userCardTemplate.content.cloneNode(true).children[0];
+	      console.log(card);
+})
